@@ -5,22 +5,6 @@ import requests
 import base64
 
 
-custom_theme = {
-    "backgroundColor": "#02163D",
-    "font": "sans serif",
-    "fontColor": "#C7C3C3",
-    "primaryColor": "#FF0000",
-    "secondaryBackgroundColor": "#262730",
-    "secondaryFontColor": "#666666",
-    "sidebarBackgroundColor": "#FFFFFF",
-    "sidebarIconColor": "#1C6E8C",
-    "sidebarTextColor": "#333333",
-}
-
-st.set_page_config(page_title="My Custom Theme", page_icon=":guardsman:", layout="wide", initial_sidebar_state="expanded", **custom_theme)
-
-
-
 
 def add_bg_from_url(image_url):
     response = requests.get(image_url)
