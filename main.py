@@ -1,6 +1,23 @@
 import streamlit as st
 import pickle
 import pandas as pd
+import requests
+
+def add_bg_from_url(image_url):
+    response = requests.get(image_url)
+    encoded_string = base64.b64encode(response.content)
+    st.markdown(
+        f"""
+        <style>
+        .stApp {{
+            background-image: url(data:image/{"png"};base64,{encoded_string.decode()});
+            background-size: cover
+        }}
+        </style>
+        """,
+        unsafe_allow_html=True
+    )
+add_bg_from_url("https://mangalorecity.in/wp-content/uploads/2022/09/stadium.jpg")
 
 teams = ['Sunrisers Hyderabad',
  'Mumbai Indians',
