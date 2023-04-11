@@ -2,7 +2,7 @@ import streamlit as st
 import pickle
 import pandas as pd
 import requests
-
+import base64
 def add_bg_from_url(image_url):
     response = requests.get(image_url)
     encoded_string = base64.b64encode(response.content)
